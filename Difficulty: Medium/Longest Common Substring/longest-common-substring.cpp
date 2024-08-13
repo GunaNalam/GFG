@@ -1,14 +1,13 @@
 //{ Driver Code Starts
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
-class Solution{
-    public:
-    
-    int longestCommonSubstr (string a, string b, int n, int m)
-    {
-        // int n=a.size(),m=b.size();
+class Solution {
+  public:
+    int longestCommonSubstr(string a, string b) {
+        int n=a.size(),m=b.size();
         vector<vector<int>> dp(n+1,vector<int>(m+1,0));
         int maxi=0;
         for (int i=1;i<=n;i++) 
@@ -18,26 +17,20 @@ class Solution{
                 maxi=max(maxi,dp[i][j]);
             }
         return maxi;
-        // return dp[n-1][m-1];
-        // return call(a,b,n-1,m-1);
     }
 };
 
 //{ Driver Code Starts.
 
-int main()
-{
-    int t; cin >> t;
-    while (t--)
-    {
-        int n, m; cin >> n >> m;
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
         string s1, s2;
         cin >> s1 >> s2;
         Solution ob;
 
-        cout << ob.longestCommonSubstr (s1, s2, n, m) << endl;
+        cout << ob.longestCommonSubstr(s1, s2) << endl;
     }
 }
-// Contributed By: Pranay Bansal
-
 // } Driver Code Ends
