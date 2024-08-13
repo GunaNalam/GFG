@@ -10,7 +10,7 @@ using namespace std;
 class Solution{
 public:
     int call(int capacity,int weight[],int value[],int n) {
-        // if (!capacity) return 0;
+        // if (!capacity) return 0; // asalu zero 
         if (!n) return (capacity/weight[n])*value[n];
         int maxi=call(capacity,weight,value,n-1); // no pick 
         if (capacity>=weight[n]) maxi=max(maxi,value[n]+call(capacity-weight[n],weight,value,n)); // pick
@@ -29,6 +29,7 @@ public:
         // return call(capacity,weight,value,n-1);
     }
 };
+
 
 
 //{ Driver Code Starts.
